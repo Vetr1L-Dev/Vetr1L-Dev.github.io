@@ -1,2 +1,166 @@
-Hello worlds
-qw
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel='icon' href='https://realtechnerd.github.io/assets/miscimages/rtnlog.jpeg'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://chancejs.com/chance.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <title>Close Work</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/telegram-web-app.js"></script>
+</head>
+<body class="container" onload="repairtask();">
+  <div class="card-body" id="test1">
+    <h1>Закрытие смены</h1>
+    <form>
+      <div class="row">
+        <input type="text" id="casharrival" placeholder="Приход наличных" class="form__input">
+      </div>
+      <div class="row">
+        <input type="text" id="cashacquiring" placeholder="Касса эквайринг" class="form__input">
+      </div>
+      <div class="row">
+        <input type="text" id="cashtransfer" placeholder="Касса перевод" class="form__input">
+      </div>
+      <div class="row">
+        <input type="text" id="theamountendday" placeholder="Сумма на конец дня" class="form__input">
+      </div>
+
+    </form>
+    <form id="inputTask">
+        <div class="form-group">
+          <h3>Список сотрудников</h3>
+          <div class="card-choice">
+          <select id="namechoice">
+            <option value="Андрей Лутовинов">Андрей Лутовинов</option>
+            <option value="Владислав Лутовинов">Владислав Лутовинов</option>
+            <option value="Дарья Разинкова">Дарья Разинкова</option>
+            <option value="Николай Макеев">Николай Макеев</option>
+            <option value="Дарья Синельникова">Дарья Синельникова</option>
+            <option value="Дмитрий Гайдаенко">Дмитрий Гайдаенко</option>
+            <option value="Даниил Однобурцеыв">Даниил Однобурцев</option>
+            <option value="Анастасия Залесская">Анастасия Залесская</option>
+            <option value="Влада Лукьяненко">Влада Лукьяненко</option>
+            <option value="Евгений Астафьев">Евгений Астафьев</option>
+            <option value="Степан Лысенков">Степан Лысенков</option>
+            <option value="Дмитрий Игнатов">Дмитрий Игнатов</option>
+            <option value="Елизавет Бодаткова">Елизавета Бодаткова</option>
+            <option value="Михаил Рихтер">Михаил Рихтер</option>
+            <option value="Даниил Алтынбеков">Даниил Алтынбеков</option>
+            <option value="Мария Рейхенбах">Мария Рейхенбах</option>
+            <option value="Ульяна Казьмина">Ульяна Казьмина</option>
+            <option value="Лев Рубаха">Лев Рубаха</option>
+            <option value="Вика Макеева">Вика Макеева</option>
+          </select>
+          <div id="buttons">
+            <button type="submit" class="btn btn-primary" id="buttonc">Добавить</button>
+          </div>
+        </div>
+      </div>
+      </form>
+    <br>
+    <ul id="taskList" class="container">
+
+    </ul>
+  </div>
+  <div class="card-choice">
+    <h3>Расходы</h3>
+    <select id="expenseschoice">
+      <option value="Нет">Нет</option>
+      <option value="Выдача з/пл.">Выдача з/пл.</option>
+      <option value="Хозяйственные расходы">Хозяйственные расходы</option>
+      <option value="Инкассация">Инкассация</option>
+      <option value="Оплата поставщику">Оплата поставщику</option>
+      <option value="Прочее">Прочее</option>
+    </select>
+  </div>
+  <div class="salary" id="salary">
+    <form id="salaryTask">
+      <div class="form-group">
+        <div class="rownew">
+          <input type="text" id="salaryInput" autocomplete="off" required placeholder="Имя Фамилия Зарплата">
+        </div>
+        <div id="buttons">
+          <button type="submit" class="btn btn-primary" id="buttonc">Добавить</button>
+        </div>
+      </div>
+      <ul id="salaryList" class="container">
+
+      </ul>
+    </form>
+  </div>
+  <div class="household" id="household">
+    <form id="householdTask">
+      <div class="form-group">
+        <div class="rownew">
+          <input type="text" id="householdInput" autocomplete="off" required placeholder="Наименование Расход">
+        </div>
+        <div id="buttons">
+          <button type="submit" class="btn btn-primary" id="buttonc">Добавить</button>
+        </div>
+      </div>
+      <ul id="householdList" class="container">
+
+      </ul>
+    </form>
+  </div>
+  <div class="collection" id="collection">
+    <form id="collectionTask">
+      <div class="form-group">
+        <div class="rownew">
+          <input type="text" id="collectionInput" autocomplete="off" required placeholder="Сумма">
+        </div>
+        <div id="buttons">
+          <button type="submit" class="btn btn-primary" id="buttonc">Добавить</button>
+        </div>
+      </div>
+      <ul id="collectionList" class="container">
+
+      </ul>
+    </form>
+  </div>
+  <div class="payment" id="payment">
+    <form id="paymentTask">
+      <div class="form-group">
+        <div class="rownew">
+          <input type="text" id="paymentInput" autocomplete="off" required placeholder="Поставщик Сумма">
+        </div>
+        <div id="buttons">
+          <button type="submit" class="btn btn-primary" id="buttonc">Добавить</button>
+        </div>
+      </div>
+      <ul id="paymentList" class="container">
+
+      </ul>
+    </form>
+  </div>
+  <div class="other" id="other">
+    <form id="otherTask">
+      <div class="form-group">
+        <div class="rownew">
+          <input type="text" id="otherInput" autocomplete="off" required placeholder="Наименование Сумма">
+        </div>
+        <div id="buttons">
+          <button type="submit" class="btn btn-primary" id="buttonc">Добавить</button>
+        </div>
+      </div>
+      <ul id="otherList" class="container">
+
+      </ul>
+    </form>
+  </div>
+  <div id="error"><h4>Заполните все обязательные поля</h4></div>
+  <div id="closeworkbutton">
+    <button class="btn btn-primary" id="endbutton" >Закрыть смену</button>
+  </div>
+  <div id="images"></div>
+  <script src="script.js"></script>
+</body>
+</html>
