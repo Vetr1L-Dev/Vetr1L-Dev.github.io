@@ -1,169 +1,60 @@
-document.getElementById('inputTask').addEventListener('submit', function(e) {
-    saveTask(e, 'namechoice', 'tasks', 'inputTask', 'taskList');
-});
-document.getElementById('salaryTask').addEventListener('submit', function(e) {
-    saveTask(e, 'salaryInput', 'salarytasks', 'salaryTask', 'salaryList');
-});
-document.getElementById('householdTask').addEventListener('submit', function(e) {
-    saveTask(e, 'householdInput', 'householdtasks', 'householdTask', 'householdList');
-});
-document.getElementById('collectionTask').addEventListener('submit', function(e) {
-    saveTask(e, 'collectionInput', 'collectiontasks', 'collectionTask', 'collectionList');
-});
-document.getElementById('paymentTask').addEventListener('submit', function(e) {
-    saveTask(e, 'paymentInput', 'paymenttasks', 'paymentTask', 'paymentList');
-});
-document.getElementById('otherTask').addEventListener('submit', function(e) {
-    saveTask(e, 'otherInput', 'othertasks', 'otherTask', 'otherList');
-});
-document.getElementById('endbutton').addEventListener('click', function() {
-    closework();
-});
+let tg = window.Telegram.WebApp;
+let order = document.getElementById("order");
+tg.expand();
 
-
-
-
-function saveTask(e, contentInput, taskin, inputTask, listoftask) {
-    var taskId = chance.guid();
-    var taskContent = document.getElementById(contentInput).value;
-    console.log(taskContent);
-    var task = {
-        id: taskId,
-        content: taskContent
-    }
-    console.log(task);
-
-    if (localStorage.getItem(taskin) == null) {
-    var tasks = [];
-    tasks.push(task);
-    localStorage.setItem(taskin, JSON.stringify(tasks));
+document.getElementById("checkbox").addEventListener("change", () => {
+    if (document.getElementById("checkbox").checked) {
+        document.getElementById("endbutton").style.display = "block";
     } else {
-    var tasks = JSON.parse(localStorage.getItem(taskin));
-    tasks.push(task);
-    localStorage.setItem(taskin, JSON.stringify(tasks));
+        document.getElementById("endbutton").style.display = "none";
+        document.getElementById("error").style.display = "none";
     }
-
-    document.getElementById(inputTask).reset();
-
-    fetchTasks(taskin, listoftask);
-
-    e.preventDefault();
-}
-function deleteTask(id, taskin, listoftask) {
-    var tasks = JSON.parse(localStorage.getItem(taskin));
-
-    for (var i = 0; i < tasks.length; i++) {
-        if (tasks[i].id === id) {
-            tasks.splice(i, 1);
-        }   
-    }
-
-    localStorage.setItem(taskin, JSON.stringify(tasks));
-
-    fetchTasks(taskin, listoftask);
-}
-
-function cycleclosework(name){
-    let text = [];
-    for (let i = 0; i < document.getElementsByName(name).length; i++) {
-        let text1 = document.getElementsByName(name).item(i).textContent;
-        if (name=="taskList"){
-            text2=document.getElementsByName('staffselection').item(i).value;
-            text.push(text1 + " " + text2.split(" ")[0]);
-
-        } else {
-            text.push(text1);
-        }
-    }
-    return text
-}
-
-function closework(e){
-    let allvariables = ["taskList", "salaryList", "householdList", "collectionList", "paymentList", "otherList"];
+})
+order.addEventListener("click", () => {
     let data = {
-        casharrival: document.getElementById("casharrival").value,
-        cashacquiring: document.getElementById("cashacquiring").value,
-        cashtransfer: document.getElementById("cashtransfer").value,
-        theamountendday: document.getElementById("theamountendday").value,
-        staff: cycleclosework("taskList"),
-        salary: cycleclosework("salaryList"),
-        household: cycleclosework("householdList"),
-        collection: cycleclosework("collectionList"),
-        payment: cycleclosework("paymentList"),
-        other: cycleclosework("otherList")
-    
-    }
-    if ((data['casharrival'].length < 3) 
-        || (data['cashacquiring'].length < 3) 
-        || (data['cashtransfer'].length < 3) 
-        || (data['theamountendday'].length < 3)
-        || (data['staff'].length < 1)) {
+        name: document.getElementById("user_name").value,
+        surname: document.getElementById("user_surname").value,
+        patronymic: document.getElementById("user_patronymic").value,
+        birthday: document.getElementById("user_birthday").value,
+        phone: document.getElementById("user_phone").value,
+        email: document.getElementById("user_email").value,
+        vk: document.getElementById("user_vk").value,
+        registration: document.getElementById("user_registration").value,
+        residence: document.getElementById("user_residence").value,
+        series: document.getElementById("user_series").value,
+        number: document.getElementById("user_number").value,
+        dateofissue: document.getElementById("user_dateofissue").value,
+        issuedbywhom: document.getElementById("user_issuedbywhom").value,
+        division: document.getElementById("user_division").value,
+        inn: document.getElementById("user_inn").value,
+        snils: document.getElementById("user_snils").value
+    };
+
+    if ((data['name'].length < 3) 
+        || (data['surname'].length < 3) 
+        || (data['patronymic'].length < 3) 
+        || (data['birthday'].length < 8)   
+        || (data['phone'].length < 8) 
+        || (data['email'].length < 10) 
+        || (data['registration'].length < 15) 
+        || (data['residence'].length < 15) 
+        || (data['series'].length != 4) 
+        || (data['number'].length != 6) 
+        || (data['dateofissue'].length < 8) 
+        || (data['issuedbywhom'].length < 4) 
+        || (data['division'].length < 6) 
+        || (data['inn'].length < 10) 
+        || (data['snils'].length < 9)) {
         return document.getElementById("error").style.display = "block";
     }
     tg.sendData(JSON.stringify(data));
     tg.close();
-}
+});
 
-function repairtask(){
-    fetchTasks("tasks", "taskList");
-    fetchTasks("salarytasks", "salaryList");
-    fetchTasks("householdtasks", "householdList");
-    fetchTasks("collectiontasks", "collectionList");
-    fetchTasks("paymenttasks", "paymentList");
-    fetchTasks("othertasks", "otherList");
-}
-function fetchTasks(taskin, listoftask) {
-    var tasks = JSON.parse(localStorage.getItem(taskin));
-    var taskList = document.getElementById(listoftask);
-    if (taskin =="tasks"){
-        var select1 = '<select id="hourchoice" name="staffselection"><option>1 час</option><option>2 часа</option><option>3 часа</option><option>4 часа</option><option>5 часов</option><option>6 часов</option><option>7 часов</option><option>8 часов</option><option>9 часов</option><option>10 часов</option><option>11 часов</option></select>' 
-        var select2 = '<select id="postchoice" name="postselection"><option>Админ</option><option>Инструктор</option><option>Стажер</option></select>'
-    } else {
-        var select1 = ''
-        var select2 = ''
-    }
-    taskList.innerHTML = "";
-    
-    for (let i = 0; i < tasks.length;i++) {
-        var id = tasks[i].id;
-        var cont = tasks[i].content;
-
-        taskList.innerHTML += "<div class='card task' style='width: 110%; max-width: 540px; margin-left: auto; margin-right: auto'><div class='card_body'>" +
-        '<button class="btn todolistitem" id="todolistitem" name=\''+listoftask+'\' >'+ 
-        cont + 
-        "</button>" + 
-        select1+
-        select2+
-        '<button onclick="deleteTask(\''+id+'\', \''+taskin+'\', \''+listoftask+'\');" class="btn btn-danger float-right">🗑️</button>' + 
-        "</div></div>" +
-        '<br>';
-    }
-
-}
 
 document.getElementById('expenseschoice').addEventListener('change', function() {
-    if (document.getElementById('expenseschoice').value == 'Нет') {
-        setdisplays('none', 'none', 'none', 'none', 'none');
+    if (document.getElementById('expenseschoice').value == 'Деньги') {
+        document.getElementById("paragcheck").style.display = "block";
     }
-    else if (document.getElementById('expenseschoice').value == 'Выдача з/пл.') {
-        setdisplays('block', 'none', 'none', 'none', 'none');
-    } else if (document.getElementById('expenseschoice').value == 'Хозяйственные расходы') {
-        setdisplays('none', 'block', 'none', 'none', 'none');
-    } else if (document.getElementById('expenseschoice').value == 'Инкассация') {
-        setdisplays('none', 'none', 'block', 'none', 'none');
-    } else if (document.getElementById('expenseschoice').value == 'Оплата поставщику') {
-        setdisplays('none', 'none', 'none', 'block', 'none');
-    } else if (document.getElementById('expenseschoice').value == 'Прочее') {
-        setdisplays('none', 'none', 'none', 'none', 'block');
-    }
+
 })
-
-
-function setdisplays(salary, household, collection, payment, other){
-    document.getElementById('salary').style.display = salary;
-    document.getElementById('household').style.display = household;
-    document.getElementById('collection').style.display = collection;
-    document.getElementById('payment').style.display = payment;
-    document.getElementById('other').style.display = other;
-}
-

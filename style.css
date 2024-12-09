@@ -208,3 +208,7 @@ h3{
 #namechoice{
     width: 100%;
 }
+
+#paragcheck{
+    display: none;
+}

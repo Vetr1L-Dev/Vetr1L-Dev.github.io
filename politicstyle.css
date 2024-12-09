@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    background: black;
+    color: black;
+}
+
+
+h3{
+    margin-top: 50px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: white;
+}
+
+#politiclist{
+    text-align: left;
+    color: white;
+}
+
+#politicinfo{
+    text-align: left;
+    text-indent: 10px;
+    color: white;
+}
+
+button{
+    border: 0;
+    border-radius: 5px;
+    margin-top: 50px;
+    height: 60px;
+    width: 200px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 500ms ease;
+    color: black;
+    background: white;
+
+}
+
+
+button:hover{
+    background: white;
+}
+
+#back {
+    text-align: center;
+}
