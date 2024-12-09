@@ -54,7 +54,8 @@ order.addEventListener("click", () => {
 
 document.getElementById('expenseschoice').addEventListener('change', function() {
     if (document.getElementById('expenseschoice').value == 'Деньги') {
-        document.getElementById("paragcheck").style.display = "block";
+        document.getElementById("salary").style.display = "block";
+        
     }
 
 })
