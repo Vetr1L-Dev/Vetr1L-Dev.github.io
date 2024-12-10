@@ -48,8 +48,13 @@
   </div>
   
   <div id="endbuttondiv" style="display: none; text-align: center; background-size: cover;">
-    <img src="/2.png" alt="icon" style="width: 60px; height: 60px; position: absolute; left: 20%; top: 40%; z-index: 0;">
-    <button id="order" style="border: none;outline: none;padding: 16px 50px;background: #1c0f85; color: #fff;font-size: 16px;cursor: pointer;border-radius: 40px; z-index: 1;">Добавить в трейд</button>
+    <div style="z-index: 0;">
+      <img src="/2.png" alt="icon" style="width: 60px; height: 60px; position: absolute; left: 20%; top: 40%;">
+    </div>
+    <div style="z-index: 1;">
+      <button id="order" style="border: none;outline: none;padding: 16px 50px;background: #1c0f85; color: #fff;font-size: 16px;cursor: pointer;border-radius: 40px;">Добавить в трейд</button>
+    </div>
+    
   </div>
   <script>
     let tg = window.Telegram.WebApp;
