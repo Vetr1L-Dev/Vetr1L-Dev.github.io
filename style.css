@@ -12,26 +12,6 @@ body {
 	background: black;
 }
 
-.todolistitem {
-    font-weight: bold;
-    border: 0;
-    cursor: default !important;
-    transition: all 500ms ease;
-    color: black;
-    background: white;
-}
-
-.todolistitem:hover {
-    color: #d3d3d3;
-    cursor: default !important;
-}
-
-#buttondivc{
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
 .row {
     display: flex;
     align-items: center;
@@ -60,16 +40,7 @@ body {
     margin-right: auto;
 }
 
-#contentInput,
-#casharrival,
-#cashacquiring,
-#cashtransfer,
-#theamountendday, 
-#salaryInput,
-#collectionInput,
-#paymentInput,
-#otherInput,
-#householdInput {
+#salaryInput{
     flex: 1;
     border: none;
     outline: none;
@@ -78,8 +49,8 @@ body {
     font-weight: 14px;
 }
 
-#buttonc,
 #endbutton {
+    display: none;
     border: none;
     outline: none;
     padding: 16px 50px;
@@ -110,8 +81,7 @@ h3{
 
 
 
-#expenseschoice,
-#namechoice {
+#expenseschoice {
 	width: 90%;
     max-width: 540px;
 	border: 1px solid #7E9BBD;
@@ -122,44 +92,22 @@ h3{
 	cursor: pointer;
 }
 
-#hourchoice,
-#postchoice{
-    width: 25%;
-    max-width: 540px;
-	border: 1px solid #7E9BBD;
-	border-radius: 6px;
-	background-color: #fff;
-	padding: 5px 20px 5px 7px;
-	outline: none;
-	cursor: pointer;
-}
 
-#expenseschoice::-ms-expand,
-#namechoice::-ms-expand,
-#hourchoice::-ms-expand,
-#postchoice::-ms-expand {
+
+#expenseschoice::-ms-expand {
 	display: none;
 }
 
-#expenseschoice:focus,
-#namechoice:focus,
-#hourchoice:focus,
-#postchoice:focus {
+#expenseschoice:focus {
 	outline: none;
 	box-shadow: 0px 0px 0px 1px #38577a, 0px 0px 10px #7e9bbd;
 }
 
-#expenseschoice-wrapper,
-#namechoice-wrapper,
-#hourchoice-wrapper,
-#postchoice-wrapper {
+#expenseschoice-wrapper{
 	position: relative;
 }
 
-#expenseschoice-wrapper::before,
-#namechoice-wrapper::before,
-#hourchoice-wrapper::before,
-#postchoice-wrapper::before {
+#expenseschoice-wrapper::before {
     content: "";
 	position: absolute;
 	top: 50%;
@@ -178,20 +126,11 @@ h3{
     text-align: center;
 }
 
-#salary,
-#household,
-#collection,
-#payment,
-#other {
+#salary{
     margin-top: 40px;
     display: none;
 }
 
-#endbutton {
-    display: none;
-    text-align: center;
-    margin-top: 40px;
-}
 
 #buttons {
     text-align: center;
