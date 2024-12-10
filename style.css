@@ -51,7 +51,8 @@ body {
     font-weight: 14px;
 }
 
-#finish{
+#finish,
+#order{
     display: none;
 }
 
