@@ -7,7 +7,6 @@ document.getElementById("checkbox").addEventListener("change", () => {
         document.getElementById("finish").style.display = "block";
     } else {
         document.getElementById("finish").style.display = "none";
-        document.getElementById("error").style.display = "none";
     }
 })
 order.addEventListener("click", () => {
