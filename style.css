@@ -50,7 +50,7 @@ body {
 }
 
 #endbutton {
-    display: none;
+    display: block;
     border: none;
     outline: none;
     padding: 16px 50px;
