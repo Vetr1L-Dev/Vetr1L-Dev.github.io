@@ -49,10 +49,9 @@ body {
     font-weight: 14px;
 }
 
-#endbutton {
+#finish{
     display: none;
 }
-
 .container {
     justify-content: center;
     align-items: center;
