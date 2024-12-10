@@ -6,7 +6,7 @@ document.getElementById("checkbox").addEventListener("change", () => {
     if (document.getElementById("checkbox").checked) {
         document.getElementById("finish").style.display = "block";
     } else {
-        document.getElementById("sinish").style.display = "none";
+        document.getElementById("finish").style.display = "none";
         document.getElementById("error").style.display = "none";
     }
 })
