@@ -1,5 +1,5 @@
 let tg = window.Telegram.WebApp;
-let order = document.getElementById("endbutton");
+let order = document.getElementById("order");
 tg.expand();
 
 document.getElementById("checkbox").addEventListener("change", () => {

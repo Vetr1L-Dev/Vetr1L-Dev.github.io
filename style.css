@@ -187,7 +187,7 @@ h3{
     display: none;
 }
 
-#closeworkbutton {
+#endbutton {
     display: none;
     text-align: center;
     margin-top: 40px;
@@ -208,4 +208,8 @@ h3{
 }
 #namechoice{
     width: 100%;
+}
+
+#paragcheck{
+    display: none;
 }
