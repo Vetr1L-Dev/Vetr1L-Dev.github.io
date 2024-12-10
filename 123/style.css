@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    background: black;
+}
+
+
+h3{
+    margin-top: 50px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: white;
+}
+
+#images{
+    text-align: center;
+    margin: 500px;
+}
+
+p{
+    width: 350px;
+    margin: 0 auto;
+    font-size: 15px auto;
+    justify-content: left;
+    text-align: left;
+    color: white;
+}
+
+button{
+    border: 0;
+    border-radius: 5px;
+    margin-top: 50px;
+    height: 60px;
+    width: 200px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 500ms ease;
+    color: black;
+    background: white;
+
+}
+
+
+button:hover{
+    background: white;
+}
+
+#form {
+    text-align: center;
+}
+
+.inputforform {
+    width: 90%;
+    outline: none;
+    margin: 10px 5%;
+    padding: 15px 10px;
+    font-size: 14px;
+    border: 2px solid silver;
+    border-radius: 5px;
+}
+
+input:focus {
+    border-color: green;
+}
+
+#error{
+    color: red;
+    display: none;
+    margin-top: 10px;
+}
+
+#endbutton{
+    display: none;
+    text-align: center;
+}
+
+#paragcheck{
+    margin-top: 15px;
+}
+
+#politic{
+    color: #7648d9;
+}

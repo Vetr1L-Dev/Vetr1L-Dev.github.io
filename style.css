@@ -10,8 +10,26 @@ body {
     font-weight: 200;
     font-family: "Poppins", sans-serif;
 	background: black;
-    justify-content: center;
+}
+
+.todolistitem {
+    font-weight: bold;
+    border: 0;
+    cursor: default !important;
+    transition: all 500ms ease;
+    color: black;
+    background: white;
+}
+
+.todolistitem:hover {
+    color: #d3d3d3;
+    cursor: default !important;
+}
+
+#buttondivc{
     align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .row {
@@ -42,7 +60,16 @@ body {
     margin-right: auto;
 }
 
-#salaryInput{
+#contentInput,
+#casharrival,
+#cashacquiring,
+#cashtransfer,
+#theamountendday, 
+#salaryInput,
+#collectionInput,
+#paymentInput,
+#otherInput,
+#householdInput {
     flex: 1;
     border: none;
     outline: none;
@@ -51,10 +78,22 @@ body {
     font-weight: 14px;
 }
 
-#finish{
-    display: none;
+#buttonc,
+#endbutton {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
 }
 
+.container {
+    justify-content: center;
+    align-items: center;
+}
 
 h1{
     color: white;
@@ -71,7 +110,8 @@ h3{
 
 
 
-#expenseschoice {
+#expenseschoice,
+#namechoice {
 	width: 90%;
     max-width: 540px;
 	border: 1px solid #7E9BBD;
@@ -82,22 +122,44 @@ h3{
 	cursor: pointer;
 }
 
+#hourchoice,
+#postchoice{
+    width: 25%;
+    max-width: 540px;
+	border: 1px solid #7E9BBD;
+	border-radius: 6px;
+	background-color: #fff;
+	padding: 5px 20px 5px 7px;
+	outline: none;
+	cursor: pointer;
+}
 
-
-#expenseschoice::-ms-expand {
+#expenseschoice::-ms-expand,
+#namechoice::-ms-expand,
+#hourchoice::-ms-expand,
+#postchoice::-ms-expand {
 	display: none;
 }
 
-#expenseschoice:focus {
+#expenseschoice:focus,
+#namechoice:focus,
+#hourchoice:focus,
+#postchoice:focus {
 	outline: none;
 	box-shadow: 0px 0px 0px 1px #38577a, 0px 0px 10px #7e9bbd;
 }
 
-#expenseschoice-wrapper{
+#expenseschoice-wrapper,
+#namechoice-wrapper,
+#hourchoice-wrapper,
+#postchoice-wrapper {
 	position: relative;
 }
 
-#expenseschoice-wrapper::before {
+#expenseschoice-wrapper::before,
+#namechoice-wrapper::before,
+#hourchoice-wrapper::before,
+#postchoice-wrapper::before {
     content: "";
 	position: absolute;
 	top: 50%;
@@ -112,11 +174,23 @@ h3{
 	pointer-events: none;
 }
 
-#salary{
+.card-choice {
+    text-align: center;
+}
+
+#salary,
+#household,
+#collection,
+#payment,
+#other {
     margin-top: 40px;
     display: none;
 }
 
+#closeworkbutton {
+    text-align: center;
+    margin-top: 40px;
+}
 
 #buttons {
     text-align: center;
@@ -133,11 +207,4 @@ h3{
 }
 #namechoice{
     width: 100%;
-}
-
-#paragcheck{
-    display: none;
-}
-#form{
-    text-align: center;
 }
