@@ -32,7 +32,7 @@
   </div>  
   </form>
   <form>
-    <div style="display: none; align-items: center;justify-content: space-between;background: #edeef0;border-radius: 30px;padding-left: 20px;margin-bottom: 5px;width: 90%;max-width: 540px;margin-left: auto;margin-right: auto;">
+    <div style="display: none; align-items: center;justify-content: space-between;background: #edeef0;border-radius: 30px;padding-left: 20px;margin-bottom: 5px;width: 90%;max-width: 540px;margin-left: auto;margin-right: auto;" id="input_money">
       <input type="text" required placeholder="Введите кол-во" id="money_input" style="flex: 1;border: none;outline: none;background: transparent;">
     </div>
   </form>
@@ -46,8 +46,13 @@
     document.getElementById('choice').addEventListener('change', function(){
       if (document.getElementById('choice').value == 'Не выбрано'){
         document.getElementById("check").style.display = "none";
+        document.getElementById("input_money").style.display = "none";
+      } else if (document.getElementById('choice').value == 'Деньги') {
+        document.getElementById("check").style.display = "block";
+        document.getElementById("input_money").style.display = "block";
       } else {
         document.getElementById("check").style.display = "block";
+        document.getElementById("input_money").style.display = "none";
       }
     })
   </script>
