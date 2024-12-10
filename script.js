@@ -4,9 +4,9 @@ tg.expand();
 
 document.getElementById("checkbox").addEventListener("change", () => {
     if (document.getElementById("checkbox").checked) {
-        document.getElementById("closeworkbutton").style.display = "block";
+        document.getElementById("endbutton").style.display = "block";
     } else {
-        document.getElementById("closeworkbutton").style.display = "none";
+        document.getElementById("endbutton").style.display = "none";
         document.getElementById("error").style.display = "none";
     }
 })
