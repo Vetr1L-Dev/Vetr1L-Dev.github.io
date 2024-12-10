@@ -16,95 +16,21 @@
     <link rel="stylesheet" href="/style.css">
     <script src="/telegram-web-app.js"></script>
 </head>
-<body class="container" onload="repairtask();">
-  <div class="card-body" id="test1">
-    <h1>Закрытие смены</h1>
-    <form>
-      <div class="row">
-        <input type="text" id="casharrival" placeholder="Приход наличных" class="form__input">
-      </div>
-      <div class="row">
-        <input type="text" id="cashacquiring" placeholder="Касса эквайринг" class="form__input">
-      </div>
-      <div class="row">
-        <input type="text" id="cashtransfer" placeholder="Касса перевод" class="form__input">
-      </div>
-      <div class="row">
-        <input type="text" id="theamountendday" placeholder="Сумма на конец дня" class="form__input">
-      </div>
-
-    </form>
-    <form id="inputTask">
-        <div class="form-group">
-          <h3>Список сотрудников</h3>
-          <div class="card-choice">
-          <select id="namechoice">
-            <option value="Андрей Лутовинов">Андрей Лутовинов</option>
-            <option value="Владислав Лутовинов">Владислав Лутовинов</option>
-            <option value="Дарья Разинкова">Дарья Разинкова</option>
-            <option value="Николай Макеев">Николай Макеев</option>
-            <option value="Дарья Синельникова">Дарья Синельникова</option>
-            <option value="Дмитрий Гайдаенко">Дмитрий Гайдаенко</option>
-            <option value="Даниил Однобурцеыв">Даниил Однобурцев</option>
-            <option value="Анастасия Залесская">Анастасия Залесская</option>
-            <option value="Влада Лукьяненко">Влада Лукьяненко</option>
-            <option value="Евгений Астафьев">Евгений Астафьев</option>
-            <option value="Степан Лысенков">Степан Лысенков</option>
-            <option value="Дмитрий Игнатов">Дмитрий Игнатов</option>
-            <option value="Елизавет Бодаткова">Елизавета Бодаткова</option>
-            <option value="Михаил Рихтер">Михаил Рихтер</option>
-            <option value="Даниил Алтынбеков">Даниил Алтынбеков</option>
-            <option value="Мария Рейхенбах">Мария Рейхенбах</option>
-            <option value="Ульяна Казьмина">Ульяна Казьмина</option>
-            <option value="Лев Рубаха">Лев Рубаха</option>
-            <option value="Вика Макеева">Вика Макеева</option>
-          </select>
-          <div id="buttons">
-            <button type="submit" class="btn btn-primary" id="buttonc">Добавить</button>
-          </div>
-        </div>
-      </div>
-      </form>
-    <br>
-    <ul id="taskList" class="container">
-
-    </ul>
-  </div>
-  <div class="card-choice">
+<body>
+  <div>    
     <h3>Расходы</h3>
-    <select id="expenseschoice">
-      <option value="Нет">Нет</option>
-      <option value="Выдача з/пл.">Выдача з/пл.</option>
-      <option value="Хозяйственные расходы">Хозяйственные расходы</option>
-      <option value="Инкассация">Инкассация</option>
-      <option value="Оплата поставщику">Оплата поставщику</option>
-      <option value="Прочее">Прочее</option>
+    <select id="choice">
+      <option value="Не выбрано">Не выбрано</option>
+      <option value="Дом">Дом</option>
+      <option value="Машина">Машина</option>
+      <option value="Телефон">Телефон</option>
+      <option value="Воздушный трансопрт">Воздушный трансопрт</option>
+      <option value="Деньги">Деньги</option>
     </select>
+  </div>  
+  <div id="check">
+    <p><input type="checkbox" id="checkbox"> Я даю согласие на обработку своих персональных данных <a href="/politic/confidentiality.html" id="politic">в данных целях</a></p>
   </div>
-  <div class="salary" id="salary">
-    <form id="salaryTask">
-      <div class="form-group">
-        <div class="rownew">
-          <input type="text" id="salaryInput" autocomplete="off" required placeholder="Имя Фамилия Зарплата">
-        </div>
-    </form>
-  </div>
-  <div class="household" id="household">
-    <p id="paragcheck"><input type="checkbox" id="checkbox"> Я даю согласие на обработку своих персональных данных <a href="/politic/confidentiality.html" id="politic">в данных целях</a></p>
-  </div>
-  <div class="collection" id="collection">
-    <p id="paragcheck"><input type="checkbox" id="checkbox"> Я даю согласие на обработку своих персональных данных <a href="/politic/confidentiality.html" id="politic">в данных целях</a></p>
-  </div>
-  <div class="payment" id="payment">
-    <p id="paragcheck"><input type="checkbox" id="checkbox"> Я даю согласие на обработку своих персональных данных <a href="/politic/confidentiality.html" id="politic">в данных целях</a></p>
-  </div>
-  <div class="other" id="other">
-    <p id="paragcheck"><input type="checkbox" id="checkbox"> Я даю согласие на обработку своих персональных данных <a href="/politic/confidentiality.html" id="politic">в данных целях</a></p>
-  </div>
-  <div id="error"><h4>Заполните все обязательные поля</h4></div>
-  <div id="closeworkbutton">
-    <button class="btn btn-primary" id="endbutton" >Закрыть смену</button>
-  </div>
-  <script src="script.js"></script>
+  <script src="/script.js"></script>
 </body>
 </html>
