@@ -1,3 +1,27 @@
+document.getElementById('inputTask').addEventListener('submit', function(e) {
+    saveTask(e, 'namechoice', 'tasks', 'inputTask', 'taskList');
+});
+document.getElementById('salaryTask').addEventListener('submit', function(e) {
+    saveTask(e, 'salaryInput', 'salarytasks', 'salaryTask', 'salaryList');
+});
+document.getElementById('householdTask').addEventListener('submit', function(e) {
+    saveTask(e, 'householdInput', 'householdtasks', 'householdTask', 'householdList');
+});
+document.getElementById('collectionTask').addEventListener('submit', function(e) {
+    saveTask(e, 'collectionInput', 'collectiontasks', 'collectionTask', 'collectionList');
+});
+document.getElementById('paymentTask').addEventListener('submit', function(e) {
+    saveTask(e, 'paymentInput', 'paymenttasks', 'paymentTask', 'paymentList');
+});
+document.getElementById('otherTask').addEventListener('submit', function(e) {
+    saveTask(e, 'otherInput', 'othertasks', 'otherTask', 'otherList');
+});
+document.getElementById('endbutton').addEventListener('click', function() {
+    closework();
+});
+
+
+
 
 function saveTask(e, contentInput, taskin, inputTask, listoftask) {
     var taskId = chance.guid();
@@ -119,23 +143,27 @@ function fetchTasks(taskin, listoftask) {
 
 document.getElementById('expenseschoice').addEventListener('change', function() {
     if (document.getElementById('expenseschoice').value == 'Нет') {
-        setdisplays('none');
+        setdisplays('none', 'none', 'none', 'none', 'none');
     }
     else if (document.getElementById('expenseschoice').value == 'Выдача з/пл.') {
-        setdisplays('block');
+        setdisplays('block', 'none', 'none', 'none', 'none');
     } else if (document.getElementById('expenseschoice').value == 'Хозяйственные расходы') {
-        setdisplays('block');
+        setdisplays('none', 'block', 'none', 'none', 'none');
     } else if (document.getElementById('expenseschoice').value == 'Инкассация') {
-        setdisplays('block');
+        setdisplays('none', 'none', 'block', 'none', 'none');
     } else if (document.getElementById('expenseschoice').value == 'Оплата поставщику') {
-        setdisplays('block');
+        setdisplays('none', 'none', 'none', 'block', 'none');
     } else if (document.getElementById('expenseschoice').value == 'Прочее') {
-        setdisplays('block');
+        setdisplays('none', 'none', 'none', 'none', 'block');
     }
 })
 
 
-function setdisplays(salary){
+function setdisplays(salary, household, collection, payment, other){
     document.getElementById('salary').style.display = salary;
+    document.getElementById('household').style.display = household;
+    document.getElementById('collection').style.display = collection;
+    document.getElementById('payment').style.display = payment;
+    document.getElementById('other').style.display = other;
 }
 
