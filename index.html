@@ -19,7 +19,8 @@
 <body style='font-family: "Poppins", sans-serif;font-weight: 200; background-color: black;'>
   <form>
   <div style="text-align: center;">    
-    <h3 style="margin-top: 50px; margin-bottom: 10px; text-align: center; color: white;">Расходы</h3>
+    <h1 style="margin-top: 10px; margin-bottom: 40px; text-align: center; color: white;">Trade BGS</h3>
+    <h3 style="margin-top: 10px; margin-bottom: 20px; text-align: center; color: white;">Выберите имущество для добавления</h3>
     <select id="choice">
       <option value="Не выбрано">Не выбрано</option>
       <option value="Дом">Дом</option>
@@ -29,6 +30,11 @@
       <option value="Деньги">Деньги</option>
     </select>
   </div>  
+  </form>
+  <form>
+    <div style="display: none; align-items: center;justify-content: space-between;background: #edeef0;border-radius: 30px;padding-left: 20px;margin-bottom: 5px;width: 90%;max-width: 540px;margin-left: auto;margin-right: auto;">
+      <input type="text" required placeholder="Введите кол-во" id="money_input" style="flex: 1;border: none;outline: none;background: transparent;">
+    </div>
   </form>
   <div id="check" style="display: none; text-align: center;">
     <p><input type="checkbox" id="checkbox"> Я даю согласие на обработку своих данных <a href="/politic/confidentiality.html" id="politic">в данных целях</a></p>
