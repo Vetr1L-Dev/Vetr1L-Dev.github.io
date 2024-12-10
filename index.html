@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100%;">
 <head>
     <link rel='icon' href='https://realtechnerd.github.io/assets/miscimages/rtnlog.jpeg'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -16,33 +16,31 @@
     <link rel="stylesheet" href="/style.css">
     <script src="/telegram-web-app.js"></script>
 </head>
-<body style='font-family: "Poppins", sans-serif;font-weight: 200'>
-  <div style="background-image: linear-gradient(to right top, #00008B, #000000); height: 100%;">
-    <form>
-    <div style="text-align: center;">    
-      <h2 style="margin-top: 10px; margin-bottom: 40px; text-align: center; color: white;">Trade BGS</h3>
-      <h4 style="margin-top: 10px; margin-bottom: 20px; text-align: center; color: white;">Выберите имущество для добавления</h3>
-      <select id="choice">
-        <option value="Не выбрано">Не выбрано</option>
-        <option value="Дом">Дом</option>
-        <option value="Машина">Машина</option>
-        <option value="Телефон">Телефон</option>
-        <option value="Воздушный трансопрт">Воздушный трансопрт</option>
-        <option value="Деньги">Деньги</option>
-      </select>
-    </div>  
-    </form>
-    <form>
-      <div style="display: none; align-items: center;justify-content: space-between;background: #edeef0;border-radius: 30px;padding-left: 20px;margin-bottom: 5px;width: 50%;max-width: 540px;margin-left: auto;margin-right: auto; margin-top: 20px;" id="input_money">
-        <input type="text" required placeholder="Введите кол-во" id="money_input" style="flex: 1;border: none;outline: none;background: transparent;">
-      </div>
-    </form>
-    <div id="check" style="display: none; text-align: center;">
-      <p><input type="checkbox" id="checkbox"> Я даю согласие на обработку своих данных <a href="/politic/confidentiality.html" id="politic">в данных целях</a></p>
+<body style='font-family: "Poppins", sans-serif;font-weight: 200; height: 100%; background: linear-gradient(to right top, #00008B, #000000) no-repeat;'>
+  <form>
+  <div style="text-align: center;">    
+    <h2 style="margin-top: 10px; margin-bottom: 40px; text-align: center; color: white;">Trade BGS</h3>
+    <h4 style="margin-top: 10px; margin-bottom: 20px; text-align: center; color: white;">Выберите имущество для добавления</h3>
+    <select id="choice">
+      <option value="Не выбрано">Не выбрано</option>
+      <option value="Дом">Дом</option>
+      <option value="Машина">Машина</option>
+      <option value="Телефон">Телефон</option>
+      <option value="Воздушный трансопрт">Воздушный трансопрт</option>
+      <option value="Деньги">Деньги</option>
+    </select>
+  </div>  
+  </form>
+  <form>
+    <div style="display: none; align-items: center;justify-content: space-between;background: #edeef0;border-radius: 30px;padding-left: 20px;margin-bottom: 5px;width: 50%;max-width: 540px;margin-left: auto;margin-right: auto; margin-top: 20px;" id="input_money">
+      <input type="text" required placeholder="Введите кол-во" id="money_input" style="flex: 1;border: none;outline: none;background: transparent;">
     </div>
-    <div id="endbuttondiv" style="display: none; text-align: center;">
-      <button id="order" style="border: none;outline: none;padding: 16px 50px;background: #ff5945;color: #fff;font-size: 16px;cursor: pointer;border-radius: 40px;">Добавить в трейд</button>
-    </div>
+  </form>
+  <div id="check" style="display: none; text-align: center;">
+    <p><input type="checkbox" id="checkbox"> Я даю согласие на обработку своих данных <a href="/politic/confidentiality.html" id="politic">в данных целях</a></p>
+  </div>
+  <div id="endbuttondiv" style="display: none; text-align: center;">
+    <button id="order" style="border: none;outline: none;padding: 16px 50px;background: #ff5945;color: #fff;font-size: 16px;cursor: pointer;border-radius: 40px;">Добавить в трейд</button>
   </div>
   <script>
     let tg = window.Telegram.WebApp;
