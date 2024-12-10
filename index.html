@@ -23,7 +23,7 @@
 <body style="font-weight: 200; height: 100%;background: linear-gradient(to right bottom, #000000, #0000ff) no-repeat;">
   <div style="text-align: center; margin-top: 80px;">
     <img src="/1.png" alt="icon" style="width: 25px; height: 25px; position: absolute; left: 56%; top: 72px;">
-    <p style='font-family: "Sniglet", serif; line-height: 37px; font-size: 35px; font-weight: 600; color: #000000; -webkit-text-stroke: 1px grey; text-align: justify; width: 60%;'>BGS<br>TRADES</p>
+    <p style='font-family: "Sniglet", serif; line-height: 37px; font-size: 35px; font-weight: 600; color: #000000; -webkit-text-stroke: 1px grey;'>BGS<br>TRADES</p>
   </div>
   
   <form>
@@ -48,8 +48,8 @@
   </div>
   
   <div id="endbuttondiv" style="display: none; text-align: center; background-size: cover;">
-    <div style="z-index: 0; position: absolute; left: 20%; top: 30%;">
-      <img src="/2.png" alt="icon" style="width: 60px; height: 60px;">
+    <div style="z-index: 0; position: absolute; left: 20%; top: 35%;" id="icondiv">
+      <img src="/2.png" alt="icon" style="width: 70px; height: 70px;">
     </div>
     <div style="z-index: 1; position: relative;">
       <button id="order" style="border: none;outline: none;padding: 16px 50px;background: #1c0f85; color: #fff;font-size: 16px;cursor: pointer;border-radius: 40px;">Добавить в трейд</button>
@@ -68,9 +68,11 @@
       } else if (document.getElementById('choice').value == 'Деньги') {
         document.getElementById("check").style.display = "block";
         document.getElementById("input_money").style.display = "block";
+        document.getElementById("icondiv").style.top = "50%";
       } else {
         document.getElementById("check").style.display = "block";
         document.getElementById("input_money").style.display = "none";
+        document.getElementById("icondiv").style.top = "35%";
       }
     })
     document.getElementById("checkbox").addEventListener("change", () => {
