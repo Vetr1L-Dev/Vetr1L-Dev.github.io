@@ -20,6 +20,7 @@ document.getElementById('expenseschoice').addEventListener('change', function() 
     if (document.getElementById('expenseschoice').value == 'Деньги') {
         document.getElementById("salary").style.display = "block";
         document.getElementById("paragcheck").style.display = "block";
+        document.getElementById("endbutton").style.display = "block";
     } else if (document.getElementById('expenseschoice').value == 'Не выбрано') {
         document.getElementById("salary").style.display = "none";
         document.getElementById("paragcheck").style.display = "none";
