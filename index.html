@@ -19,8 +19,8 @@
 <body style='font-family: "Poppins", sans-serif;font-weight: 200; background-color: black;'>
   <form>
   <div style="text-align: center;">    
-    <h1 style="margin-top: 10px; margin-bottom: 40px; text-align: center; color: white;">Trade BGS</h3>
-    <h3 style="margin-top: 10px; margin-bottom: 20px; text-align: center; color: white;">Выберите имущество для добавления</h3>
+    <h2 style="margin-top: 10px; margin-bottom: 40px; text-align: center; color: white;">Trade BGS</h3>
+    <h4 style="margin-top: 10px; margin-bottom: 20px; text-align: center; color: white;">Выберите имущество для добавления</h3>
     <select id="choice">
       <option value="Не выбрано">Не выбрано</option>
       <option value="Дом">Дом</option>
@@ -32,12 +32,15 @@
   </div>  
   </form>
   <form>
-    <div style="display: none; align-items: center;justify-content: space-between;background: #edeef0;border-radius: 30px;padding-left: 20px;margin-bottom: 5px;width: 90%;max-width: 540px;margin-left: auto;margin-right: auto;" id="input_money">
+    <div style="display: none; align-items: center;justify-content: space-between;background: #edeef0;border-radius: 30px;padding-left: 20px;margin-bottom: 5px;width: 90%;max-width: 540px;margin-left: auto;margin-right: auto; margin-top: 20px;" id="input_money">
       <input type="text" required placeholder="Введите кол-во" id="money_input" style="flex: 1;border: none;outline: none;background: transparent;">
     </div>
   </form>
   <div id="check" style="display: none; text-align: center;">
     <p><input type="checkbox" id="checkbox"> Я даю согласие на обработку своих данных <a href="/politic/confidentiality.html" id="politic">в данных целях</a></p>
+  </div>
+  <div id="endbuttondiv" style="display: none;">
+    <button id="order" style="border: none;outline: none;padding: 16px 50px;background: #ff5945;color: #fff;font-size: 16px;cursor: pointer;border-radius: 40px;">Добавить в трейд</button>
   </div>
   <script>
     let tg = window.Telegram.WebApp;
@@ -53,6 +56,13 @@
       } else {
         document.getElementById("check").style.display = "block";
         document.getElementById("input_money").style.display = "none";
+      }
+    })
+    document.getElementById("checkbox").addEventListener("change", () => {
+      if (document.getElementById("checkbox").checked) {
+          document.getElementById("endbuttondiv").style.display = "block";
+      } else {
+          document.getElementById("endbuttondiv").style.display = "none";
       }
     })
   </script>
