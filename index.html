@@ -17,9 +17,12 @@
     <script src="/telegram-web-app.js"></script>
 </head>
 <body style='font-family: "Poppins", sans-serif;font-weight: 200; height: 100%; background: linear-gradient(to right top, #00008B, #000000) no-repeat;'>
+  <div>
+    <img src="/1.jpg" alt="icon" style="display: inline-block; vertical-align: middle;">
+    <h2 style="margin-top: 10px; margin-bottom: 40px; text-align: center; color: white; display: inline-block; vertical-align: middle;;">Trade BGS</h3>
+  </div>
   <form>
   <div style="text-align: center;">    
-    <h2 style="margin-top: 10px; margin-bottom: 40px; text-align: center; color: white;">Trade BGS</h3>
     <h4 style="margin-top: 10px; margin-bottom: 20px; text-align: center; color: white;">Выберите имущество для добавления</h3>
     <select id="choice">
       <option value="Не выбрано">Не выбрано</option>
@@ -50,6 +53,7 @@
       if (document.getElementById('choice').value == 'Не выбрано'){
         document.getElementById("check").style.display = "none";
         document.getElementById("input_money").style.display = "none";
+        document.getElementById("endbuttondiv").style.display = "none";
       } else if (document.getElementById('choice').value == 'Деньги') {
         document.getElementById("check").style.display = "block";
         document.getElementById("input_money").style.display = "block";
