@@ -19,7 +19,7 @@
 <body style='font-family: "Poppins", sans-serif;font-weight: 200; background-color: black;'>
   <form>
   <div style="text-align: center;">    
-    <h3>Расходы</h3>
+    <h3 style="margin-top: 50px; margin-bottom: 10px; text-align: center; color: white;">Расходы</h3>
     <select id="choice">
       <option value="Не выбрано">Не выбрано</option>
       <option value="Дом">Дом</option>
@@ -38,7 +38,11 @@
     tg.expand();
 
     document.getElementById('choice').addEventListener('change', function(){
-      document.getElementById("check").style.display = "block";
+      if (document.getElementById('choice').value == 'Не выбрано'){
+        document.getElementById("check").style.display = "none";
+      } else {
+        document.getElementById("check").style.display = "block";
+      }
     })
   </script>
 </body>
