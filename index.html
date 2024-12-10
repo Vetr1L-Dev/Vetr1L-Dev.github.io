@@ -16,35 +16,37 @@
     <link rel="stylesheet" href="style.css">
     <script src="/telegram-web-app.js"></script>
 </head>
-<body class="container">
-  <div class="card-choice">
-    <h3> 123<br></h3>
-    <select id="expenseschoice">
-      <option value="Нет">Не выбрано</option>
-      <option value="Дом">Дом</option>
-      <option value="Телефон">Телефон</option>
-      <option value="Воздушный транспорт">Воздушный транспорт</option>
-      <option value="Машина">Машина</option>
-      <option value="Деньги">Деньги</option>
-    </select>
-  </div>
-  <div class="salary" id="salary">
-    <form id="salaryTask">
-      <div class="form-group">
-        <div class="rownew">
-          <input type="text" id="salaryInput" autocomplete="off" required placeholder="Введите кол-во">
-        </div>
-      </div>
-    </form>
-  </div>
+<body>
   <form>
-    <div id="error"><h4>Заполните все обязательные поля</h4></div>
-    <p id="paragcheck"><input type="checkbox" id="checkbox"> Я соглашаюсь с <a href="politics/politic.html" id="politic">политикой трейдов</a></p>
+    <div class="card-choice">
+      <h3> 123<br></h3>
+      <select id="expenseschoice">
+        <option value="Нет">Не выбрано</option>
+        <option value="Дом">Дом</option>
+        <option value="Телефон">Телефон</option>
+        <option value="Воздушный транспорт">Воздушный транспорт</option>
+        <option value="Машина">Машина</option>
+        <option value="Деньги">Деньги</option>
+      </select>
+    </div>
+    <div class="salary" id="salary">
+      <form id="salaryTask">
+        <div class="form-group">
+          <div class="rownew">
+            <input type="text" id="salaryInput" autocomplete="off" required placeholder="Введите кол-во">
+          </div>
+        </div>
+      </form>
+    </div>
+    <form>
+      <div id="error"><h4>Заполните все обязательные поля</h4></div>
+      <p id="paragcheck"><input type="checkbox" id="checkbox"> Я соглашаюсь с <a href="politics/politic.html" id="politic">политикой трейдов</a></p>
+    </form>
+    <div id="finish">
+      <button class="btn btn-primary" id="order" >Добавить в трейд</button>
+    </div>
+    <div id="images"></div>
   </form>
-  <div id="finish">
-    <button class="btn btn-primary" id="order" >Добавить в трейд</button>
-  </div>
-  <div id="images"></div>
   <script src="script.js"></script>
 </body>
 </html>

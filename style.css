@@ -10,6 +10,8 @@ body {
     font-weight: 200;
     font-family: "Poppins", sans-serif;
 	background: black;
+    justify-content: center;
+    align-items: center;
 }
 
 .row {
@@ -52,10 +54,7 @@ body {
 #finish{
     display: none;
 }
-.container {
-    justify-content: center;
-    align-items: center;
-}
+
 
 h1{
     color: white;
