@@ -30,17 +30,15 @@
     </select>
   </div>  
   </form>
-  <form>
-  <div id="check" style="display: none;">
+  <div id="check" style="display: none; background-color: aqua;">
     <p><input type="checkbox" id="checkbox"> Я даю согласие на обработку своих данных <a href="/politic/confidentiality.html" id="politic">в данных целях</a></p>
   </div>
-  </form>
   <script>
     let tg = window.Telegram.WebApp;
     tg.expand();
 
     document.getElementById('choice').addEventListener('change', function(){
-      tg.close();
+      document.getElementById("check").style.display = "block";
     })
   </script>
 </body>
