@@ -83,16 +83,9 @@
     })
 
     order.addEventListener("click", () => {
-      if (document.getElementById('choice').value == 'money'){
-        let data = {
-          tradename: document.getElementById("choice").value,
-          amount: document.getElementById('money_input').value
-        }
-      } else {
-        let data = {
+      let data = {
           tradename: document.getElementById("choice").value,
           amount: 0
-        }
       }
       
       tg.sendData(JSON.stringify(data));
