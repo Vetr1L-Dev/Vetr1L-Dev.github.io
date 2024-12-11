@@ -50,10 +50,14 @@
     
   </div>
   <script>
-    window.onload = function (){
-      window.location.search.replace('?', '').split('&').map(el => el.split('=')).filter(it => it =='telephone' || it[0] == 'house').forEach(el => {
-        document.getElementById(el[0]).innerHTML = el[1]
-      })
+    function get(name){
+      if(name==(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search)){
+        return decodeURIComponent(name[1]);
+      }
+
+    }
+    window.onload = function(){
+      document.getElementById('house').innerText = get('house')
     }
 
     let tg = window.Telegram.WebApp;
