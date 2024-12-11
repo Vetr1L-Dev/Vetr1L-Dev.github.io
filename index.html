@@ -57,7 +57,7 @@
 
     }
     window.onload = function(){
-      document.getElementById('house').innerText = get('arg')
+      document.getElementById('house').innerText = jQuery.url.param("arg")
     }
 
     let tg = window.Telegram.WebApp;
