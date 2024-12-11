@@ -30,11 +30,11 @@
   <div style="text-align: center;">    
     <select id="choice" style="background-color: #000000; color: lightblue; border: none;">
       <option value="Не выбрано">Не выбрано</option>
-      <option value="Дом">Дом</option>
-      <option value="Машина">Машина</option>
-      <option value="Телефон">Телефон</option>
-      <option value="Воздушный трансопрт">Воздушный трансопрт</option>
-      <option value="Деньги">Деньги</option>
+      <option value="house">Дом</option>
+      <option value="car">Машина</option>
+      <option value="telephone">Телефон</option>
+      <option value="airtransport">Воздушный трансопрт</option>
+      <option value="money">Деньги</option>
     </select>
   </div>  
   </form>
@@ -46,7 +46,7 @@
   <div id="check" style="display: none; text-align: center; margin-top: 20px;">
     <p style="color: white;"><input type="checkbox" id="checkbox"> Я соглашаюсь с <a href="/politics/politic.html" id="politic">политикой трейдов</a></p>
   </div>
-  
+  <div id="error" style="font-family: 'Sniglet', serif;font-size: 20px; font-weight: 400; color: red; display: none; margin-top: 10px;"><h4>Заполните все обязательные поля</h4></div>
   <div id="endbuttondiv" style="display: none; text-align: center; background-size: cover;">
     <div style="z-index: 0; position: absolute; left: 20%; top: 30%;" id="icondiv">
       <img src="/2.png" alt="icon" style="width: 70px; height: 70px;">
@@ -58,6 +58,7 @@
   </div>
   <script>
     let tg = window.Telegram.WebApp;
+    let order = document.getElementById("order");
     tg.expand();
 
     document.getElementById('choice').addEventListener('change', function(){
@@ -65,7 +66,7 @@
         document.getElementById("check").style.display = "none";
         document.getElementById("input_money").style.display = "none";
         document.getElementById("endbuttondiv").style.display = "none";
-      } else if (document.getElementById('choice').value == 'Деньги') {
+      } else if (document.getElementById('choice').value == 'money') {
         document.getElementById("check").style.display = "block";
         document.getElementById("input_money").style.display = "block";
         document.getElementById("icondiv").style.top = '38.5%';
@@ -82,6 +83,27 @@
           document.getElementById("endbuttondiv").style.display = "none";
       }
     })
+
+    order.addEventListener("click", () => {
+      if (document.getElementById('choice').value = 'money'){
+        let data = {
+          tradename: document.getElementById("choice").value,
+          amount: document.getElementById('money_input').value
+        }
+      } else {
+        let data = {
+          tradename: document.getElementById("choice").value,
+          amount: 0
+        }
+      }
+      if ((document.getElementById('choice').value = 'money')&&(parseInt(data["amount"])<=0)){
+        return document.getElementById("error").style.display = "block";
+      }
+    
+    })
+    tg.sendData(JSON.stringify(data));
+    tg.close();
+
   </script>
 </body>
 </html>
