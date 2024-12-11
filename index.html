@@ -57,7 +57,10 @@
 
     }
     window.onload = function(){
-      document.getElementById('house').innerText = jQuery.url.param("arg")
+      var url_string = window.location.href;
+      var url = new URL(url_string);
+      var paramValue = url.searchParams.get("arg")
+      document.getElementById('house').innerText = paramValue
     }
 
     let tg = window.Telegram.WebApp;
