@@ -45,7 +45,6 @@
   <div id="check" style="display: none; text-align: center; margin-top: 20px;">
     <p style="color: white;"><input type="checkbox" id="checkbox"> Я соглашаюсь с <a href="/politics/politic.html" id="politic">политикой трейдов</a></p>
   </div>
-  <div id="error" style="font-family: 'Sniglet', serif;font-size: 20px; font-weight: 400; color: red; display: none; margin-top: 10px;"><h4>Заполните все обязательные поля</h4></div>
   <div id="endbuttondiv" style="display: none; text-align: center; background-size: cover;">
     <div style="z-index: 0; position: absolute; left: 20%; top: 30%;" id="icondiv">
       <img src="/2.png" alt="icon" style="width: 70px; height: 70px;">
@@ -95,9 +94,7 @@
           amount: 0
         }
       }
-      if ((document.getElementById('choice').value = 'money')&&(parseInt(data["amount"])<=0)){
-        return document.getElementById("error").style.display = "block";
-      }
+      
       tg.sendData(JSON.stringify(data));
       tg.close();
     })
