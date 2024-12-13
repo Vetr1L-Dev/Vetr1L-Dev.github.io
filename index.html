@@ -60,42 +60,42 @@
       if (paramValue == 'Нет'){
         document.getElementById('house').remove();
       } else {
-        document.getElementById('house').innerText = paramValue
+        document.getElementById('house').innerText = paramValue+'🏡'
       }
 
       var paramValue = url.searchParams.get("car")
       if (paramValue == 'Нет'){
         document.getElementById('car').remove();
       } else {
-        document.getElementById('car').innerText = paramValue
+        document.getElementById('car').innerText = paramValue+'🚗'
       }
 
       var paramValue = url.searchParams.get("telephone")
       if (paramValue == 'Нет'){
         document.getElementById('telephone').remove();
       } else {
-        document.getElementById('telephone').innerText = paramValue
+        document.getElementById('telephone').innerText = paramValue+'📱'
       }
 
       var paramValue = url.searchParams.get("airtransport")
       if (paramValue == 'Нет'){
         document.getElementById('airtransport').remove();
       } else {
-        document.getElementById('airtransport').innerText = paramValue
+        document.getElementById('airtransport').innerText = paramValue+'🪂'
       }
       
       var paramValue = url.searchParams.get("editor")
       if (paramValue == 'Нет'){
         document.getElementById('editor').remove();
       } else {
-        document.getElementById('editor').innerText = paramValue
+        document.getElementById('editor').innerText = paramValue+'👨‍💻'
       }
       
       var paramValue = url.searchParams.get("pc")
       if (paramValue == 'Нет'){
         document.getElementById('pc').remove();
       } else {
-        document.getElementById('pc').innerText = paramValue + '('+url.searchParams.get('pcwear')+'%)'
+        document.getElementById('pc').innerText = paramValue + '💻 ('+url.searchParams.get('pcwear')+'%)'
       }
 
       var money = url.searchParams.get("money")
@@ -103,7 +103,7 @@
         money = 10000000
       }
       var showmoney = String(money).replace(/(\d)(?=(\d{3})+([^\d]|$))/g, "$1.")
-      document.getElementById('money').innerText = 'Деньги (макс. '+showmoney+')'
+      document.getElementById('money').innerText = 'Деньги'+' '+'(макс. '+showmoney+'💰)'
     
     }
 
