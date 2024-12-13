@@ -135,16 +135,8 @@
     })
 
     document.getElementById('money_input').oninput = function(){
-      var money = url.searchParams.get("money")
-      if (parseInt(money) > 10000000){
-        money = 10000000
-      }
-      if(parseInt(document.getElementById('money_input').value)>parseInt(money)){
-        document.getElementById("check").style.display = "none";
-        document.getElementById("endbuttondiv").style.display = "none";
-      } else {
-        document.getElementById("check").style.display = "block";
-      }
+      document.getElementById("check").style.display = "block";
+
     }
 
     
