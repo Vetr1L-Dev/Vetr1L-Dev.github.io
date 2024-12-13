@@ -134,6 +134,15 @@
       }
     })
 
+    document.getElementById('money_input').addEventListener('change', function(){
+      if(parseInt(document.getElementById('money_input').value)>showmoney){
+        document.getElementById("check").style.display = "none";
+        document.getElementById("endbuttondiv").style.display = "none";
+      } else {
+        document.getElementById("check").style.display = "block";
+      }
+    })
+
     order.addEventListener("click", () => {
       let data = {
           tradename: document.getElementById("choice").value,
