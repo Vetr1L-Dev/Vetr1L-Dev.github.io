@@ -135,7 +135,14 @@
     })
 
     document.getElementById('money_input').oninput = function(){
-      document.getElementById("check").style.display = "block";
+      var money = url.searchParams.get("money")
+      if (parseInt(money) > 10000000){
+        money = 10000000
+      }
+      if (money == 10000000){
+        document.getElementById("check").style.display = "block";
+      }
+      
 
     }
 
