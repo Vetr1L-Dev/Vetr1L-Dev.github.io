@@ -98,12 +98,12 @@
         document.getElementById('pc').innerText = paramValue + '('+url.searchParams.get('pcwear')+'%)'
       }
 
-      var paramValue = url.searchParams.get("showmoney")
-      document.getElementById('money').innerText = 'Деньги (макс. '+paramValue+')'
-      
-
-
-      let money = url.searchParams.get("money")
+      var money = url.searchParams.get("money")
+      if (parseInt(money) > 10000000){
+        money = 10000000
+      }
+      document.getElementById('money').innerText = 'Деньги (макс. '+money+')'
+    
     }
 
     let tg = window.Telegram.WebApp;
