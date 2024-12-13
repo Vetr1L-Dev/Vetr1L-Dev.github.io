@@ -135,13 +135,19 @@
     })
 
     document.getElementById('money_input').oninput = function(){
+      var url_string = window.location.href;
+      var url = new URL(url_string);
       var money = url.searchParams.get("money")
       if (parseInt(money) > 10000000){
         money = 10000000;
       };
       var inputvalue = document.getElementById('money_input').value;
-      if (parseInt(inputvalue) == parseInt(money)){
+      if (parseInt(inputvalue) > parseInt(money)){
+        document.getElementById("check").style.display = "none";
+        document.getElementById("endbuttondiv").style.display = "none";
+      } else {
         document.getElementById("check").style.display = "block";
+        document.getElementById("check").checked = false;
       }
       
 
