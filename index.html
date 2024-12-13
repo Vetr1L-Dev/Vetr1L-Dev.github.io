@@ -156,8 +156,8 @@
     
     order.addEventListener("click", () => {
       let data = {
-          tradename: 'house',
-          amount: 'house'
+          tradename: document.getElementById('choice').value,
+          amount: document.getElementById('money_input').value
       }
       
       tg.sendData(JSON.stringify(data));
