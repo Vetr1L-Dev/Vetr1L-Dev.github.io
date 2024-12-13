@@ -95,7 +95,7 @@
       if (paramValue == 'Нет'){
         document.getElementById('pc').remove();
       } else {
-        document.getElementById('pc').innerText = paramValue + '💻 ('+url.searchParams.get('pcwear')+'%)'
+        document.getElementById('pc').innerText = '💻'+paramValue + '('+url.searchParams.get('pcwear')+'%)'
       }
 
       var money = url.searchParams.get("money")
