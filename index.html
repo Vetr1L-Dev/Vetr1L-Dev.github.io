@@ -134,8 +134,8 @@
       }
     })
 
-    document.getElementById('money_input').addEventListener('change', function(){
-      if(parseInt(document.getElementById('money_input').value)>showmoney){
+    document.getElementById('money_input').addEventListener('change', function(event){
+      if(parseInt(event.target.value)>money){
         document.getElementById("check").style.display = "none";
         document.getElementById("endbuttondiv").style.display = "none";
       } else {
