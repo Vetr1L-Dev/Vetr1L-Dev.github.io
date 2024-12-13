@@ -102,7 +102,8 @@
       if (parseInt(money) > 10000000){
         money = 10000000
       }
-      document.getElementById('money').innerText = 'Деньги (макс. '+money+')'
+      var showmoney = String(money).replace(/(\d) (?=(\d{3})+([^\d]|$))/g, "$1 ")
+      document.getElementById('money').innerText = 'Деньги (макс. '+showmoney+')'
     
     }
 
