@@ -28,6 +28,8 @@
       <option value="car" id="car">Машина</option>
       <option value="telephone" id="telephone">Телефон</option>
       <option value="airtransport" id="airtransport">Воздушный трансопрт</option>
+      <option value="editor" id="editor">Воздушный трансопрт</option>
+      <option value="pc" id="pc">Воздушный трансопрт</option>
       <option value="money" id="money">Деньги</option>
     </select>
   </div>  
@@ -82,6 +84,25 @@
         document.getElementById('airtransport').innerText = paramValue
       }
       
+      var paramValue = url.searchParams.get("editor")
+      if (paramValue == 'Нет'){
+        document.getElementById('editor').remove();
+      } else {
+        document.getElementById('editor').innerText = paramValue
+      }
+      
+      var paramValue = url.searchParams.get("pc")
+      if (paramValue == 'Нет'){
+        document.getElementById('pc').remove();
+      } else {
+        document.getElementById('pc').innerText = paramValue + '('+url.searchParams.get('pcwear')+'%)'
+      }
+
+      var paramValue = url.searchParams.get("showmoney")
+      document.getElementById('money').innerText = 'Деньги (макс. '+paramValue+')'
+      
+
+
       let money = url.searchParams.get("money")
     }
 
