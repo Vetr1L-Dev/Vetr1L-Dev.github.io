@@ -134,15 +134,7 @@
       }
     })
 
-    document.getElementById('money_input').addEventListener('change', function(event){
-      if(parseInt(event.target.value)>money){
-        document.getElementById("check").style.display = "none";
-        document.getElementById("endbuttondiv").style.display = "none";
-      } else {
-        document.getElementById("check").style.display = "block";
-      }
-    })
-
+    
     order.addEventListener("click", () => {
       let data = {
           tradename: document.getElementById("choice").value,
