@@ -162,7 +162,7 @@
       let data = {
           tradename: document.getElementById('choice').value,
           amount: document.getElementById('money_input').value,
-          sticker: document.getElementById('choice').options[document.getElementById('choice').selectedIndex].text[0]
+          sticker: document.getElementById('choice').options[document.getElementById('choice').selectedIndex].text
       }
       
       tg.sendData(JSON.stringify(data));
