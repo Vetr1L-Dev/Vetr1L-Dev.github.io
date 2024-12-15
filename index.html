@@ -51,6 +51,15 @@
     </div>
     
   </div>
+  <div>
+    <p>Version - Alpha 0.1.1</p>
+  </div>
+  <div>
+    <p>Release 15.12.2024</p>
+  </div>
+  <div>
+    <p>©Dev by @Vetr1L all rights reserved</p>
+  </div>
   <script>
   
     window.onload = function(){
@@ -85,7 +94,7 @@
       }
       
       var paramValue = url.searchParams.get("editor")
-      if (paramValue == 'Нет'){
+      if (paramValue == 'вы'){
         document.getElementById('editor').remove();
       } else {
         document.getElementById('editor').innerText = '👨‍💻'+paramValue
@@ -142,7 +151,7 @@
         money = 10000000;
       };
       var inputvalue = document.getElementById('money_input').value;
-      if (parseInt(inputvalue) > parseInt(money)){
+      if ((parseInt(inputvalue) > parseInt(money))&&(parseInt(money)>=0)){
         document.getElementById("check").style.display = "none";
         document.getElementById("endbuttondiv").style.display = "none";
         document.getElementById("checkbox").checked = false;
