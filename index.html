@@ -146,13 +146,16 @@
         money = 10000000;
       };
       var inputvalue = document.getElementById('money_input').value;
-      if ((parseInt(inputvalue) > parseInt(money))&&(parseInt(money)>=0)){
-        document.getElementById("check").style.display = "none";
-        document.getElementById("endbuttondiv").style.display = "none";
-        document.getElementById("checkbox").checked = false;
-      } else {
-        document.getElementById("check").style.display = "block";
+      if (parseInt(money)>=0){
+          if (parseInt(inputvalue) > parseInt(money)){
+          document.getElementById("check").style.display = "none";
+          document.getElementById("endbuttondiv").style.display = "none";
+          document.getElementById("checkbox").checked = false;
+        } else {
+          document.getElementById("check").style.display = "block";
+        }
       }
+      
       
 
     }
